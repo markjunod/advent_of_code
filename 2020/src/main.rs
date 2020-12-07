@@ -47,6 +47,7 @@ fn run_day(day: u8) {
         1 => days::day1::run(),
         2 => days::day2::run(),
         3 => days::day3::run(),
+        4 => days::day4::run(),
         _ if day > 25 => println!("Only days from 1 through 25 are valid"),
         _ => println!("Day {} is not yet implemented", day),
     };
@@ -58,8 +59,11 @@ fn time_all() {
     days::day1::run();
     days::day2::run();
     days::day3::run();
+    days::day4::run();
 
-    let total_time = current_nanos() - start;
+    let end = current_nanos();
+
+    let total_time = end - start;
 
     let total_time_ms = (total_time as f64) / 1_000_000.0;
 
