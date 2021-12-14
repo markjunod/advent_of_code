@@ -608,9 +608,9 @@ pub fn run() {
 }
 
 fn run_part1() {
-    println!("Day 7 - Part 1: ");
+    println!("2020 - Day 7 - Part 1: ");
 }
 
 fn run_part2() {
-    println!("Day 7 - Part 2: ");
+    println!("2020 - Day 7 - Part 2: ");
 }

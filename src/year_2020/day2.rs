@@ -1032,7 +1032,7 @@ fn run_part1() {
         }
     }
 
-    println!("Day 2 - Part 1: Found {} valid passwords", valid_passwords);
+    println!("2020 - Day 2 - Part 1: Found {} valid passwords", valid_passwords);
 }
 
 fn run_part2() {
@@ -1050,7 +1050,7 @@ fn run_part2() {
         }
     }
 
-    println!("Day 2 - Part 2: Found {} valid passwords", valid_passwords);
+    println!("2020 - Day 2 - Part 2: Found {} valid passwords", valid_passwords);
 }
 
 fn parse_password_policy(policy: &str) -> (u8, u8, char, &str) {

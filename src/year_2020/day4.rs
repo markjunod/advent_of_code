@@ -1125,13 +1125,13 @@ pub fn run() {
 fn run_part1() {
     let valid_passports = split_into_passport_strings().iter().filter(|passport| passport_contains_all_fields(passport)).count();
 
-    println!("Day 4 - Part 1: {} valid passports", valid_passports);
+    println!("2020 - Day 4 - Part 1: {} valid passports", valid_passports);
 }
 
 fn run_part2() {
     let valid_passports = split_into_passport_strings().iter().filter(|passport| is_passport_valid(passport)).count();
 
-    println!("Day 4 - Part 2: {} valid passports", valid_passports);
+    println!("2020 - Day 4 - Part 2: {} valid passports", valid_passports);
 }
 
 fn split_into_passport_strings() -> Vec<&'static str> {

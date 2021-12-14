@@ -985,7 +985,7 @@ fn run_part1() {
         }
     }
 
-    println!("Day 5 - Part 1: The highest seat id is {}", max_seat_id);
+    println!("2020 - Day 5 - Part 1: The highest seat id is {}", max_seat_id);
 }
 
 fn run_part2() {
@@ -1001,7 +1001,7 @@ fn run_part2() {
         }
     }
 
-    println!("Day 5 - Part 2: My seat id is {}", seat_id);
+    println!("2020 - Day 5 - Part 2: My seat id is {}", seat_id);
 }
 
 fn parse_seat_id(boarding_pass: &str) -> u32 {

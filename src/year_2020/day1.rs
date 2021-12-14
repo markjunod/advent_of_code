@@ -26,8 +26,8 @@ fn run_part1() {
             let e2 = EXPENSE_ARRAY[j];
 
             if e1 + e2 == 2020 {
-                println!("Day 1 - Part 1: {} + {} = 2020", e1, e2);
-                println!("Day 1 - Part 1: {} * {} = {}", e1, e2, e1 * e2);
+                println!("2020 - Day 1 - Part 1: {} + {} = 2020", e1, e2);
+                println!("2020 - Day 1 - Part 1: {} * {} = {}", e1, e2, e1 * e2);
                 break;
             }
         }
@@ -43,8 +43,8 @@ fn run_part2() {
                 let e3 = EXPENSE_ARRAY[k];
 
                 if e1 + e2 + e3 == 2020 {
-                    println!("Day 1 - Part 2: {} + {} + {} = 2020", e1, e2, e3);
-                    println!("Day 1 - Part 2: {} * {} * {} = {}", e1, e2, e3, e1 * e2 * e3);
+                    println!("2020 - Day 1 - Part 2: {} + {} + {} = 2020", e1, e2, e3);
+                    println!("2020 - Day 1 - Part 2: {} * {} * {} = {}", e1, e2, e3, e1 * e2 * e3);
                     break;
                 }
             }

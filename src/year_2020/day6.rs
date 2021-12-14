@@ -1715,13 +1715,13 @@ pub fn run() {
 fn run_part1() {
     let sum_of_yesses_counts: u32 = ALL_ANSWERS.iter().map(|answers| count_yesses_in_group(answers)).sum();
 
-    println!("Day 6 - Part 1: Sum of anyone answering yes is {}", sum_of_yesses_counts);
+    println!("2020 - Day 6 - Part 1: Sum of anyone answering yes is {}", sum_of_yesses_counts);
 }
 
 fn run_part2() {
     let sum_of_yesses_counts: u32 = ALL_ANSWERS.iter().map(|answers| count_overlapping_yesses(answers)).sum();
 
-    println!("Day 6 - Part 2: Sum of everyone answering yes is {}", sum_of_yesses_counts);
+    println!("2020 - Day 6 - Part 2: Sum of everyone answering yes is {}", sum_of_yesses_counts);
 }
 
 fn count_yesses_in_group(group_answers: &str) -> u32 {

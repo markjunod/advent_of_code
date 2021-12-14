@@ -339,7 +339,7 @@ pub fn run() {
 }
 
 fn run_part1() {
-    println!("Day 3 - Part 1: {} trees hit", traverse_map(3, 1));
+    println!("2020 - Day 3 - Part 1: {} trees hit", traverse_map(3, 1));
 }
 
 fn run_part2() {
@@ -351,7 +351,7 @@ fn run_part2() {
 
     let product = r1_d1 * r3_d1 * r5_d1 * r7_d1 * r1_d2;
 
-    println!("Day 3 - Part 2: {}, {}, {}, {}, and {} trees hit. The product is {}", r1_d1, r3_d1, r5_d1, r7_d1, r1_d2, product);
+    println!("2020 - Day 3 - Part 2: {}, {}, {}, {}, and {} trees hit. The product is {}", r1_d1, r3_d1, r5_d1, r7_d1, r1_d2, product);
 }
 
 fn traverse_map(right: usize, down: usize) -> u32 {
