@@ -961,7 +961,6 @@ const BOARDING_PASSES: [&str; 960] = [
     "BFFBFBBRLL",
     "BFBFBFFRRR",
     "FBBFFFBRLL",
-    
 ];
 
 pub fn run() {
