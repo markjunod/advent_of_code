@@ -1,3 +1,10 @@
+use std::collections::HashSet;
+
+use lazy_static::lazy_static;
+use regex::Regex;
+
+use crate::timer::time_millis;
+
 const PASSPORTS: &str = "
 eyr:2033
 hgt:177cm pid:173cm
@@ -1105,14 +1112,14 @@ iyr:2029
 hgt:183cm cid:187 byr:2019 ecl:xry iyr:2013 pid:164cm hcl:#18171d eyr:2021
 ";
 
-use lazy_static::lazy_static;
-use regex::Regex;
-use std::collections::HashSet;
-
 pub fn run() {
-    run_part1();
+    let part1_millis = time_millis(|| run_part1());
 
-    run_part2();
+    println!("2020 - Day 4 - Part 1: Took {} millis", part1_millis);
+
+    let part2_millis = time_millis(|| run_part2());
+
+    println!("2020 - Day 4 - Part 2: Took {} millis", part2_millis);
 }
 
 fn run_part1() {

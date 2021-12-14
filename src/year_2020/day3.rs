@@ -1,3 +1,5 @@
+use crate::timer::time_millis;
+
 const TREE_MAP: [&str; 323] = [
     ".#......##..#.....#....#.#.#...",
     ".#.#...#.##.#..........#...##..",
@@ -327,9 +329,13 @@ const TREE_MAP: [&str; 323] = [
 const TREE: &str = "#";
 
 pub fn run() {
-    run_part1();
+    let part1_millis = time_millis(|| run_part1());
 
-    run_part2();
+    println!("2020 - Day 3 - Part 1: Took {} millis", part1_millis);
+
+    let part2_millis = time_millis(|| run_part2());
+
+    println!("2020 - Day 3 - Part 2: Took {} millis", part2_millis);
 }
 
 fn run_part1() {

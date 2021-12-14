@@ -1,3 +1,5 @@
+use crate::timer::time_millis;
+
 const RULES: [&str; 594] = [
     "light salmon bags contain 5 dotted olive bags, 4 wavy lavender bags.",
     "dark purple bags contain 5 striped maroon bags, 1 wavy maroon bag.",
@@ -596,9 +598,13 @@ const RULES: [&str; 594] = [
 ];
 
 pub fn run() {
-    run_part1();
+    let part1_millis = time_millis(|| run_part1());
 
-    run_part2();
+    println!("2020 - Day 7 - Part 1: Took {} millis", part1_millis);
+
+    let part2_millis = time_millis(|| run_part2());
+
+    println!("2020 - Day 7 - Part 2: Took {} millis", part2_millis);
 }
 
 fn run_part1() {
