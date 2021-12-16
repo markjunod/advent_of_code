@@ -9,3 +9,11 @@ pub fn run() {
 
     println!("2021 - Day 1 - Part 2: Took {} millis", part2_millis);
 }
+
+fn run_part1() {
+    todo!();
+}
+
+fn run_part2() {
+    todo!();
+}

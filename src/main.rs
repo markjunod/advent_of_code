@@ -8,19 +8,28 @@ mod year_2021;
 fn main() {
     let cli_arg_matches = cli_args();
 
-    let subcommand = cli_arg_matches.subcommand_matches("run_all");
+    let run_day_args = cli_arg_matches.subcommand_matches("run_day");
+    let run_all_args = cli_arg_matches.subcommand_matches("run_all");
 
-    match subcommand {
-        Some(subcommand_arg_matches) => run_all_for_year(subcommand_arg_matches.value_of("year")),
-        None => run_day_for_year(cli_arg_matches.value_of("year"), cli_arg_matches.value_of("day")),
-    };
+    if run_day_args.is_some() {
+        let year = run_day_args.unwrap().value_of("year");
+        let day = run_day_args.unwrap().value_of("day");
+        return run_day_for_year(year, day);
+    }
+
+    if run_all_args.is_some() {
+        let year = run_all_args.unwrap().value_of("year");
+        return run_all_for_year(year);
+    }
+
+    println!("No valid subcommand entered. Use one of 'run_day' or 'run_all' (see --help for all options)");
 }
 
 fn run_all_for_year(year: Option<&str>) {
     match parse_to_number(year) {
         2020 => year_2020::run_all(),
         2021 => year_2021::run_all(),
-        _ => println!("Only year 2020 has a run_all command implemented"),
+        y => println!("Only years 2020 and 2021 have a run_all command implemented: given year {}", y),
     };
 }
 
@@ -28,12 +37,12 @@ fn run_day_for_year(year: Option<&str>, day: Option<&str>) {
     match parse_to_number(year) {
         2020 => year_2020::run_day(parse_to_number(day)),
         2021 => year_2021::run_day(parse_to_number(day)),
-        _ => println!("Only year 2020 has any days implemented"),
+        y => println!("Only years 2020 and 2021 have any days implemented: given year {}", y),
     };
 }
 
 fn parse_to_number(opt_str: Option<&str>) -> u32 {
-    match opt_str.unwrap_or("-1").parse() {
+    match opt_str.unwrap_or("0").parse() {
         Ok(num) => num,
         Err(e) => panic!("Unable to parse {:?} as a number: {:?}", opt_str, e),
     }
