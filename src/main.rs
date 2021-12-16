@@ -3,6 +3,7 @@ use clap::clap_app;
 
 pub mod timer;
 mod year_2020;
+mod year_2021;
 
 fn main() {
     let cli_arg_matches = cli_args();
@@ -18,6 +19,7 @@ fn main() {
 fn run_all_for_year(year: Option<&str>) {
     match parse_to_number(year) {
         2020 => year_2020::run_all(),
+        2021 => year_2021::run_all(),
         _ => println!("Only year 2020 has a run_all command implemented"),
     };
 }
@@ -25,6 +27,7 @@ fn run_all_for_year(year: Option<&str>) {
 fn run_day_for_year(year: Option<&str>, day: Option<&str>) {
     match parse_to_number(year) {
         2020 => year_2020::run_day(parse_to_number(day)),
+        2021 => year_2021::run_day(parse_to_number(day)),
         _ => println!("Only year 2020 has any days implemented"),
     };
 }
