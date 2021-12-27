@@ -9,7 +9,7 @@ fn main() {
     let cli_arg_matches = cli_args();
 
     let run_day_args = cli_arg_matches.subcommand_matches("run_day");
-    let run_all_args = cli_arg_matches.subcommand_matches("run_all");
+    let run_year_args = cli_arg_matches.subcommand_matches("run_year");
 
     if run_day_args.is_some() {
         let year = run_day_args.unwrap().value_of("year");
@@ -17,8 +17,8 @@ fn main() {
         return run_day_for_year(year, day);
     }
 
-    if run_all_args.is_some() {
-        let year = run_all_args.unwrap().value_of("year");
+    if run_year_args.is_some() {
+        let year = run_year_args.unwrap().value_of("year");
         return run_all_for_year(year);
     }
 
@@ -57,7 +57,7 @@ fn cli_args() -> ArgMatches<'static> {
             (@arg year: -y --year +takes_value +required possible_values(&["2020", "2021"]) "The Advent of Code year to run")
             (@arg day: -d --day +takes_value +required "The day of the chosen year to run")
         )
-        (@subcommand run_all =>
+        (@subcommand run_year =>
             (about: "Runs all problems sequentially for a given year")
             (@arg year: -y --year +takes_value +required possible_values(&["2020", "2021"]) "The Advent of Code year to run all problems for")
         )
