@@ -2,7 +2,6 @@ use lazy_static::lazy_static;
 
 use crate::timer::time_millis;
 use std::collections::HashMap;
-use std::hash::Hash;
 
 #[derive(Copy, Clone, Hash, Eq, PartialEq, Debug)]
 struct Point {

@@ -64,7 +64,7 @@ fn run_part2() {
         cur_bingo_num_idx += 1;
     }
 
-    let mut last_winning_board = &mut boards[0];
+    let last_winning_board = &mut boards[0];
     while !is_winner(last_winning_board) {
         mark_board(BINGO_NUMBERS[cur_bingo_num_idx], last_winning_board);
 
