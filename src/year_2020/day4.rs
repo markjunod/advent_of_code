@@ -1,6 +1,7 @@
 use std::collections::HashSet;
 
 use lazy_static::lazy_static;
+use log::info;
 use regex::Regex;
 
 use crate::timer::time_millis;
@@ -12,23 +13,23 @@ lazy_static! {
 pub fn run() {
     let part1_millis = time_millis(|| run_part1());
 
-    println!("2020 - Day 4 - Part 1: Took {} millis", part1_millis);
+    info!("2020 - Day 4 - Part 1: Took {} millis", part1_millis);
 
     let part2_millis = time_millis(|| run_part2());
 
-    println!("2020 - Day 4 - Part 2: Took {} millis", part2_millis);
+    info!("2020 - Day 4 - Part 2: Took {} millis", part2_millis);
 }
 
 fn run_part1() {
     let valid_passports = PASSPORTS.iter().filter(|passport| passport_contains_all_fields(passport)).count();
 
-    println!("2020 - Day 4 - Part 1: {} valid passports", valid_passports);
+    info!("2020 - Day 4 - Part 1: {} valid passports", valid_passports);
 }
 
 fn run_part2() {
     let valid_passports = PASSPORTS.iter().filter(|passport| is_passport_valid(passport)).count();
 
-    println!("2020 - Day 4 - Part 2: {} valid passports", valid_passports);
+    info!("2020 - Day 4 - Part 2: {} valid passports", valid_passports);
 }
 
 fn is_passport_valid(passport: &str) -> bool {

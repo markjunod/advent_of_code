@@ -1,4 +1,5 @@
 use lazy_static::lazy_static;
+use log::info;
 
 use crate::timer::time_millis;
 
@@ -11,15 +12,15 @@ const TREE: &str = "#";
 pub fn run() {
     let part1_millis = time_millis(|| run_part1());
 
-    println!("2020 - Day 3 - Part 1: Took {} millis", part1_millis);
+    info!("2020 - Day 3 - Part 1: Took {} millis", part1_millis);
 
     let part2_millis = time_millis(|| run_part2());
 
-    println!("2020 - Day 3 - Part 2: Took {} millis", part2_millis);
+    info!("2020 - Day 3 - Part 2: Took {} millis", part2_millis);
 }
 
 fn run_part1() {
-    println!("2020 - Day 3 - Part 1: {} trees hit", traverse_map(3, 1));
+    info!("2020 - Day 3 - Part 1: {} trees hit", traverse_map(3, 1));
 }
 
 fn run_part2() {
@@ -31,7 +32,7 @@ fn run_part2() {
 
     let product = r1_d1 * r3_d1 * r5_d1 * r7_d1 * r1_d2;
 
-    println!("2020 - Day 3 - Part 2: {}, {}, {}, {}, and {} trees hit. The product is {}", r1_d1, r3_d1, r5_d1, r7_d1, r1_d2, product);
+    info!("2020 - Day 3 - Part 2: {}, {}, {}, {}, and {} trees hit. The product is {}", r1_d1, r3_d1, r5_d1, r7_d1, r1_d2, product);
 }
 
 fn traverse_map(right: usize, down: usize) -> u32 {

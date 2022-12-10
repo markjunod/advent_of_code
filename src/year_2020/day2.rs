@@ -1,4 +1,5 @@
 use lazy_static::lazy_static;
+use log::info;
 
 use crate::timer::time_millis;
 
@@ -13,11 +14,11 @@ lazy_static! {
 pub fn run() {
     let part1_millis = time_millis(|| run_part1());
 
-    println!("2020 - Day 2 - Part 1: Took {} millis", part1_millis);
+    info!("2020 - Day 2 - Part 1: Took {} millis", part1_millis);
 
     let part2_millis = time_millis(|| run_part2());
 
-    println!("2020 - Day 2 - Part 2: Took {} millis", part2_millis);
+    info!("2020 - Day 2 - Part 2: Took {} millis", part2_millis);
 }
 
 fn run_part1() {
@@ -39,7 +40,7 @@ fn run_part1() {
         }
     }
 
-    println!("2020 - Day 2 - Part 1: Found {} valid passwords", valid_passwords);
+    info!("2020 - Day 2 - Part 1: Found {} valid passwords", valid_passwords);
 }
 
 fn run_part2() {
@@ -57,7 +58,7 @@ fn run_part2() {
         }
     }
 
-    println!("2020 - Day 2 - Part 2: Found {} valid passwords", valid_passwords);
+    info!("2020 - Day 2 - Part 2: Found {} valid passwords", valid_passwords);
 }
 
 fn parse_password_policy(policy: &str) -> (u8, u8, char, &str) {

@@ -1,4 +1,5 @@
 use lazy_static::lazy_static;
+use log::info;
 
 use crate::timer::time_millis;
 use std::collections::HashMap;
@@ -41,11 +42,11 @@ lazy_static! {
 pub fn run() {
     let part1_millis = time_millis(|| run_part1());
 
-    println!("2021 - Day 5 - Part 1: Took {} millis", part1_millis);
+    info!("2021 - Day 5 - Part 1: Took {} millis", part1_millis);
 
     let part2_millis = time_millis(|| run_part2());
 
-    println!("2021 - Day 5 - Part 2: Took {} millis", part2_millis);
+    info!("2021 - Day 5 - Part 2: Took {} millis", part2_millis);
 }
 
 fn run_part1() {
@@ -60,7 +61,7 @@ fn run_part1() {
 
     point_counts.retain(|_, &mut count| count > 1);
 
-    println!("2021 - Day 5 - Part 1: Found {} dangerous points", point_counts.len());
+    info!("2021 - Day 5 - Part 1: Found {} dangerous points", point_counts.len());
 }
 
 fn run_part2() {
@@ -78,7 +79,7 @@ fn run_part2() {
 
     point_counts.retain(|_, &mut count| count > 1);
 
-    println!("2021 - Day 5 - Part 2: Found {} dangerous points", point_counts.len());
+    info!("2021 - Day 5 - Part 2: Found {} dangerous points", point_counts.len());
 }
 
 fn add_vert_line(point_counts: &mut HashMap<Point, i32>, line: &Line) {

@@ -1,3 +1,4 @@
+use log::{error, info, warn};
 use crate::timer::time_millis;
 
 mod day1;
@@ -19,7 +20,7 @@ pub fn run_all() {
         day7::run();
     });
 
-    println!("Running all days implemented for 2021 took {} millis", total_millis);
+    info!("Running all days implemented for 2021 took {} millis", total_millis);
 }
 
 pub fn run_day(day: u32) {
@@ -31,7 +32,7 @@ pub fn run_day(day: u32) {
         5 => day5::run(),
         6 => day6::run(),
         7 => day7::run(),
-        n if n > 25 => println!("Days greater than 25 are not an option"),
-        n => println!("Day {} is not implemented yet", n),
+        n if n > 25 => error!("Days greater than 25 are not an option"),
+        n => warn!("Day {} is not implemented yet", n),
     }
 }

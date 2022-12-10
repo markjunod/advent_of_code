@@ -1,4 +1,5 @@
 use lazy_static::lazy_static;
+use log::info;
 
 use crate::timer::time_millis;
 
@@ -15,11 +16,11 @@ const REPORT_ENTRY_LENGTH: u32 = 12;
 pub fn run() {
     let part1_millis = time_millis(|| run_part1());
 
-    println!("2021 - Day 3 - Part 1: Took {} millis", part1_millis);
+    info!("2021 - Day 3 - Part 1: Took {} millis", part1_millis);
 
     let part2_millis = time_millis(|| run_part2());
 
-    println!("2021 - Day 3 - Part 2: Took {} millis", part2_millis);
+    info!("2021 - Day 3 - Part 2: Took {} millis", part2_millis);
 }
 
 fn run_part1() {
@@ -37,14 +38,14 @@ fn run_part1() {
         current_bit <<= 1;
     }
 
-    println!("2021 - Day 3 - Part 1: {} gamma rate, {} epsilon rate, {} power consumption", gamma, epsilon, gamma * epsilon);
+    info!("2021 - Day 3 - Part 1: {} gamma rate, {} epsilon rate, {} power consumption", gamma, epsilon, gamma * epsilon);
 }
 
 fn run_part2() {
     let o2_entry = find_o2_entry();
     let co2_entry = find_co2_entry();
 
-    println!("2021 - Day 3 - Part 2: {} O2 rating, {} CO2 rating, {} life support", o2_entry, co2_entry, o2_entry * co2_entry);
+    info!("2021 - Day 3 - Part 2: {} O2 rating, {} CO2 rating, {} life support", o2_entry, co2_entry, o2_entry * co2_entry);
 }
 
 fn find_o2_entry() -> u32 {

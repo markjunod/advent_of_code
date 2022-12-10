@@ -1,4 +1,5 @@
 use lazy_static::lazy_static;
+use log::info;
 
 use crate::timer::time_millis;
 
@@ -13,11 +14,11 @@ lazy_static! {
 pub fn run() {
     let part1_millis = time_millis(|| run_part1());
 
-    println!("2021 - Day 7 - Part 1: Took {} millis", part1_millis);
+    info!("2021 - Day 7 - Part 1: Took {} millis", part1_millis);
 
     let part2_millis = time_millis(|| run_part2());
 
-    println!("2021 - Day 7 - Part 2: Took {} millis", part2_millis);
+    info!("2021 - Day 7 - Part 2: Took {} millis", part2_millis);
 }
 
 fn run_part1() {
@@ -33,7 +34,7 @@ fn run_part1() {
             moved + crab_pos - median_pos
         }
     });
-    println!("2021 - Day 7 - Part 1: {} total fuel used to move crabs", total_moved);
+    info!("2021 - Day 7 - Part 1: {} total fuel used to move crabs", total_moved);
 }
 
 fn run_part2() {
@@ -86,7 +87,7 @@ fn run_part2() {
         }
     }
 
-    println!("2021 - Day 7 - Part 2: {} total fuel used to move crabs", total_fuel);
+    info!("2021 - Day 7 - Part 2: {} total fuel used to move crabs", total_fuel);
 }
 
 fn calc_median(positions: &Vec<u64>) -> u64 {

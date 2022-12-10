@@ -1,4 +1,5 @@
 use lazy_static::lazy_static;
+use log::info;
 
 use crate::timer::time_millis;
 
@@ -13,11 +14,11 @@ lazy_static! {
 pub fn run() {
     let part1_millis = time_millis(|| run_part1());
 
-    println!("2020 - Day 1 - Part 1: Took {} millis", part1_millis);
+    info!("2020 - Day 1 - Part 1: Took {} millis", part1_millis);
 
     let part2_millis = time_millis(|| run_part2());
 
-    println!("2020 - Day 1 - Part 2: Took {} millis", part2_millis);
+    info!("2020 - Day 1 - Part 2: Took {} millis", part2_millis);
 }
 
 fn run_part1() {
@@ -27,8 +28,8 @@ fn run_part1() {
             let e2 = EXPENSES[j];
 
             if e1 + e2 == 2020 {
-                println!("2020 - Day 1 - Part 1: {} + {} = 2020", e1, e2);
-                println!("2020 - Day 1 - Part 1: {} * {} = {}", e1, e2, e1 * e2);
+                info!("2020 - Day 1 - Part 1: {} + {} = 2020", e1, e2);
+                info!("2020 - Day 1 - Part 1: {} * {} = {}", e1, e2, e1 * e2);
                 break;
             }
         }
@@ -44,8 +45,8 @@ fn run_part2() {
                 let e3 = EXPENSES[k];
 
                 if e1 + e2 + e3 == 2020 {
-                    println!("2020 - Day 1 - Part 2: {} + {} + {} = 2020", e1, e2, e3);
-                    println!("2020 - Day 1 - Part 2: {} * {} * {} = {}", e1, e2, e3, e1 * e2 * e3);
+                    info!("2020 - Day 1 - Part 2: {} + {} + {} = 2020", e1, e2, e3);
+                    info!("2020 - Day 1 - Part 2: {} * {} * {} = {}", e1, e2, e3, e1 * e2 * e3);
                     break;
                 }
             }

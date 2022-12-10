@@ -1,4 +1,5 @@
 use lazy_static::lazy_static;
+use log::info;
 
 use crate::timer::time_millis;
 
@@ -9,11 +10,11 @@ lazy_static! {
 pub fn run() {
     let part1_millis = time_millis(|| run_part1());
 
-    println!("2020 - Day 5 - Part 1: Took {} millis", part1_millis);
+    info!("2020 - Day 5 - Part 1: Took {} millis", part1_millis);
 
     let part2_millis = time_millis(|| run_part2());
 
-    println!("2020 - Day 5 - Part 2: Took {} millis", part2_millis);
+    info!("2020 - Day 5 - Part 2: Took {} millis", part2_millis);
 }
 
 fn run_part1() {
@@ -27,7 +28,7 @@ fn run_part1() {
         }
     }
 
-    println!("2020 - Day 5 - Part 1: The highest seat id is {}", max_seat_id);
+    info!("2020 - Day 5 - Part 1: The highest seat id is {}", max_seat_id);
 }
 
 fn run_part2() {
@@ -43,7 +44,7 @@ fn run_part2() {
         }
     }
 
-    println!("2020 - Day 5 - Part 2: My seat id is {}", seat_id);
+    info!("2020 - Day 5 - Part 2: My seat id is {}", seat_id);
 }
 
 fn parse_seat_id(boarding_pass: &str) -> u32 {

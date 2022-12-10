@@ -1,4 +1,5 @@
 use lazy_static::lazy_static;
+use log::info;
 
 use crate::timer::time_millis;
 
@@ -16,11 +17,11 @@ lazy_static! {
 pub fn run() {
     let part1_millis = time_millis(|| run_part1());
 
-    println!("2021 - Day 6 - Part 1: Took {} millis", part1_millis);
+    info!("2021 - Day 6 - Part 1: Took {} millis", part1_millis);
 
     let part2_millis = time_millis(|| run_part2());
 
-    println!("2021 - Day 6 - Part 2: Took {} millis", part2_millis);
+    info!("2021 - Day 6 - Part 2: Took {} millis", part2_millis);
 }
 
 fn run_part1() {
@@ -28,7 +29,7 @@ fn run_part1() {
 
     populate_lantern_fish(80, &mut fish_counts);
 
-    println!("2021 - Day 6 - Part 1: {} lantern fish after 80 days", fish_counts.iter().sum::<u64>());
+    info!("2021 - Day 6 - Part 1: {} lantern fish after 80 days", fish_counts.iter().sum::<u64>());
 }
 
 fn run_part2() {
@@ -36,7 +37,7 @@ fn run_part2() {
 
     populate_lantern_fish(256, &mut fish_counts);
 
-    println!("2021 - Day 6 - Part 2: {} lantern fish after 256 days", fish_counts.iter().sum::<u64>());
+    info!("2021 - Day 6 - Part 2: {} lantern fish after 256 days", fish_counts.iter().sum::<u64>());
 }
 
 fn populate_lantern_fish(days: u32, fish_counts: &mut Vec<u64>) {
