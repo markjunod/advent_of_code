@@ -1,5 +1,5 @@
 [package]
-name = "advent-of-code"
+name = "advent_of_code"
 version = "0.1.0"
 authors = ["markjunod <mark.junod@gmail.com>"]
 edition = "2018"
@@ -8,5 +8,15 @@ edition = "2018"
 
 [dependencies]
 clap = "2.34.0"
+env_logger = "0.10.0"
 lazy_static = "1.4.0"
+log = "0.4.17"
 regex = "1.4.2"
+
+[dev-dependencies]
+criterion = "0.3.3"
+pprof = { version = "0.5.0", features = ["flamegraph"] }
+
+[[bench]]
+name = "year_2022"
+harness = false

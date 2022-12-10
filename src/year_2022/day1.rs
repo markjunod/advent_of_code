@@ -1,4 +1,5 @@
 use lazy_static::lazy_static;
+use log::{error, info};
 
 use crate::timer::time_millis;
 
@@ -17,19 +18,19 @@ lazy_static! {
 pub fn run() {
     let part1_millis = time_millis(|| run_part1());
 
-    println!("2022 - Day 1 - Part 1: Took {} millis", part1_millis);
+    info!("2022 - Day 1 - Part 1: Took {} millis", part1_millis);
 
     let part2_millis = time_millis(|| run_part2());
 
-    println!("2022 - Day 1 - Part 2: Took {} millis", part2_millis);
+    info!("2022 - Day 1 - Part 2: Took {} millis", part2_millis);
 }
 
 fn run_part1() {
     let max_calories = CALORIES.iter().max();
 
     match max_calories {
-        Some(max) => println!("2022 - Day 1 - Part 1: {} total calories carried by the top elf", max),
-        None => println!("2022 - Day 1 - Part 1: Unable to parse a max value from the calorie sums"),
+        Some(max) => info!("2022 - Day 1 - Part 1: {} total calories carried by the top elf", max),
+        None => error!("2022 - Day 1 - Part 1: Unable to parse a max value from the calorie sums"),
     };
 }
 
@@ -52,5 +53,5 @@ fn run_part2() {
 
     let sum = top_3_calories[0] + top_3_calories[1] + top_3_calories[2];
 
-    println!("2022 - Day 1 - Part 2: {} total calories carried by the top 3 elves", sum);
+    info!("2022 - Day 1 - Part 2: {} total calories carried by the top 3 elves", sum);
 }

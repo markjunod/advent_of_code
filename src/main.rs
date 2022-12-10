@@ -1,12 +1,14 @@
 use clap::ArgMatches;
 use clap::clap_app;
+use log::{error, warn};
 
-pub mod timer;
-mod year_2020;
-mod year_2021;
-mod year_2022;
+use advent_of_code::year_2020;
+use advent_of_code::year_2021;
+use advent_of_code::year_2022;
 
 fn main() {
+    env_logger::init();
+
     let cli_arg_matches = cli_args();
 
     let run_day_args = cli_arg_matches.subcommand_matches("run_day");
@@ -23,7 +25,7 @@ fn main() {
         return run_all_for_year(year);
     }
 
-    println!("No valid subcommand entered. Use one of 'run_day' or 'run_all' (see --help for all options)");
+    error!("No valid subcommand entered. Use one of 'run_day' or 'run_all' (see --help for all options)");
 }
 
 fn run_all_for_year(year: Option<&str>) {
@@ -31,7 +33,7 @@ fn run_all_for_year(year: Option<&str>) {
         2020 => year_2020::run_all(),
         2021 => year_2021::run_all(),
         2022 => year_2022::run_all(),
-        y => println!("Only years 2020 and 2021 have a run_all command implemented: given year {}", y),
+        y => warn!("Only years 2020-2022 have a run_all command implemented: given year {}", y),
     };
 }
 
@@ -40,7 +42,7 @@ fn run_day_for_year(year: Option<&str>, day: Option<&str>) {
         2020 => year_2020::run_day(parse_to_number(day)),
         2021 => year_2021::run_day(parse_to_number(day)),
         2022 => year_2022::run_day(parse_to_number(day)),
-        y => println!("Only years 2020 and 2021 have any days implemented: given year {}", y),
+        y => warn!("Only years 2020-2022 have any days implemented: given year {}", y),
     };
 }
 
