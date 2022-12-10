@@ -19,7 +19,7 @@ pub fn run_all() {
         day7::run();
     });
 
-    println!("Running all days implemented for 2020 took {} millis", total_millis);
+    println!("Running all days implemented for 2021 took {} millis", total_millis);
 }
 
 pub fn run_day(day: u32) {

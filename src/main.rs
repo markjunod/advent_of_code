@@ -4,6 +4,7 @@ use clap::clap_app;
 pub mod timer;
 mod year_2020;
 mod year_2021;
+mod year_2022;
 
 fn main() {
     let cli_arg_matches = cli_args();
@@ -29,6 +30,7 @@ fn run_all_for_year(year: Option<&str>) {
     match parse_to_number(year) {
         2020 => year_2020::run_all(),
         2021 => year_2021::run_all(),
+        2022 => year_2022::run_all(),
         y => println!("Only years 2020 and 2021 have a run_all command implemented: given year {}", y),
     };
 }
@@ -37,6 +39,7 @@ fn run_day_for_year(year: Option<&str>, day: Option<&str>) {
     match parse_to_number(year) {
         2020 => year_2020::run_day(parse_to_number(day)),
         2021 => year_2021::run_day(parse_to_number(day)),
+        2022 => year_2022::run_day(parse_to_number(day)),
         y => println!("Only years 2020 and 2021 have any days implemented: given year {}", y),
     };
 }
@@ -54,12 +57,12 @@ fn cli_args() -> ArgMatches<'static> {
         (author: "Mark Junod <mark.junod@gmail.com>")
         (about: "Solves Advent of Code problems")
         (@subcommand run_day =>
-            (@arg year: -y --year +takes_value +required possible_values(&["2020", "2021"]) "The Advent of Code year to run")
+            (@arg year: -y --year +takes_value +required possible_values(&["2020", "2021", "2022"]) "The Advent of Code year to run")
             (@arg day: -d --day +takes_value +required "The day of the chosen year to run")
         )
         (@subcommand run_year =>
             (about: "Runs all problems sequentially for a given year")
-            (@arg year: -y --year +takes_value +required possible_values(&["2020", "2021"]) "The Advent of Code year to run all problems for")
+            (@arg year: -y --year +takes_value +required possible_values(&["2020", "2021", "2022"]) "The Advent of Code year to run all problems for")
         )
     ).get_matches()
 }
