@@ -18,5 +18,13 @@ criterion = "0.3.3"
 pprof = { version = "0.5.0", features = ["flamegraph"] }
 
 [[bench]]
+name = "year_2020"
+harness = false
+
+[[bench]]
+name = "year_2021"
+harness = false
+
+[[bench]]
 name = "year_2022"
 harness = false
