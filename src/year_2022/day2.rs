@@ -1,5 +1,5 @@
 use lazy_static::lazy_static;
-use log::{error, info};
+use log::info;
 
 use crate::timer::time_millis;
 
