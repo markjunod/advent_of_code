@@ -98,8 +98,3 @@ fn calc_median(positions: &Vec<u64>) -> u64 {
     let high_middle = positions.len() / 2;
     (positions[high_middle] + positions[high_middle - 1]) / 2
 }
-
-fn calc_geo_sum(n: u64) -> u64 {
-    // this is the closed form of 1 + 2 + 3 + ... + n
-    n * (n + 1) / 2
-}
