@@ -84,5 +84,5 @@ fn run_part2() {
         sum += power; 
     });
 
-    info!("2023 - Day 1 - Part 2: Sum of set powers {}", sum);
+    info!("2023 - Day 2 - Part 2: Sum of set powers {}", sum);
 }
