@@ -151,16 +151,13 @@ fn run_part1() {
 }
 
 fn run_part2() {
-    // println!("{:?}", ENGINE_SCHEMATIC.punctuation);
     let sum: u64 = ENGINE_SCHEMATIC.punctuation.iter()
         .filter(|(c, _)| c == &'*')
         .map(|(_, coord)| {
-            // println!("{:?}", coord);
             let neighbors = coord.neighbors().into_iter()
                 .filter(|neighbor| ENGINE_SCHEMATIC.numbers_by_coords.contains_key(neighbor))
                 .map(|coord| ENGINE_SCHEMATIC.numbers_by_coords.get(&coord).unwrap())
                 .collect::<HashSet<_>>();
-            // println!("{:?}", neighbors);
             if neighbors.len() == 2 {
                 neighbors.into_iter().map(|number| number.value as u64).fold(1, |prod, x| prod * x)
             } else {
