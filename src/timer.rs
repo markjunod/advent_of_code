@@ -15,5 +15,5 @@ pub fn time_nanos<F>(f: F) -> u64 where F: FnOnce() {
 }
 
 fn current_nanos() -> u64 {
-    SystemTime::now().duration_since(UNIX_EPOCH).unwrap().subsec_nanos() as u64
+    SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_nanos() as u64
 }
