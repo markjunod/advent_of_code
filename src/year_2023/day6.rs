@@ -2,8 +2,8 @@ use log::info;
 
 use crate::timer::time_millis;
 
-const TEST_TIMES: [u64; 3] = [7, 15, 30];
-const TEST_RECORDS: [u64; 3] = [9, 40, 200];
+// const TEST_TIMES: [u64; 3] = [7, 15, 30];
+// const TEST_RECORDS: [u64; 3] = [9, 40, 200];
 
 const TIMES: [u64; 4] = [59, 70, 78, 78];
 const RECORDS: [u64; 4] = [430, 1218, 1213, 1276];
