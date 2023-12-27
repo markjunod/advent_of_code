@@ -11,6 +11,7 @@ mod day7;
 mod day8;
 mod day9;
 mod day10;
+mod day11;
 
 pub fn run_all() {
     let total_millis = time_millis(|| {
@@ -24,6 +25,7 @@ pub fn run_all() {
         day8::run();
         day9::run();
         day10::run();
+        day11::run();
     });
 
     info!("Running all days implemented for 2023 took {} millis", total_millis);
@@ -41,6 +43,7 @@ pub fn run_day(day: u32) {
         8 => day8::run(),
         9 => day9::run(),
         10 => day10::run(),
+        11 => day11::run(),
         n if n > 25 => error!("Days greater than 25 are not an option"),
         n => warn!("Day {} is not implemented yet", n),
     }

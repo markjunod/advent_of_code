@@ -218,7 +218,7 @@ fn run_part2() {
         }
     }
 
-    info!("2023 - Day 10 - Part 2:  {}", count);
+    info!("2023 - Day 10 - Part 2: Total area inside loop {}", count);
 }
 
 // if outside, only way to get inside is to hit a NS pipe, or NE/SE pipe, followed by EW pipes, then a SW/NW
